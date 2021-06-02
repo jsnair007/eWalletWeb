@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.16.3.57:9002/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:element name="GetSessionTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSessionTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSessionTimeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckRegistrationStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckRegistrationStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="CheckRegistrationStatusResult" nillable="true" type="q1:SIGNUP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckEnrollmentStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckEnrollmentStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="CheckEnrollmentStatusResult" nillable="true" type="q2:ENROLL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckUserEnrollmentStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckUserEnrollmentStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="CheckUserEnrollmentStatusResult" nillable="true" type="q3:ENROLL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertNewEnrollment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="objSignup" nillable="true" type="q4:SIGNUP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertNewEnrollmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertNewEnrollmentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserLogin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserLoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="UserLoginResult" nillable="true" type="q5:LOGIN" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogoutUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WalletId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SessionID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogoutUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="LogoutUserResult" nillable="true" type="q6:LOGOUT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnrollCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MerchantWalletId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnrollCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="EnrollCustomerResult" nillable="true" type="q7:ENROLL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUserEnrollment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MerchantWalletId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OTP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EncryptedPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WalletId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUserEnrollmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertUserEnrollmentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateOTP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MerchantWalletId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CustomerMobile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OTP" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateOTPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ValidateOTPResult" nillable="true" type="q8:ENROLL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWalletId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WalletId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWalletIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateWalletIdResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WalletId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ViewProfileResult" nillable="true" type="q9:PROFILE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WALLET_ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ESTABLISHMENT_NAME" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MOBILE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ADDRESS" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CITY" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PINCODE" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="UpdateProfileResult" nillable="true" type="q10:PROFILE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WalletId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CurrentPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NewPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ChangePasswordResult" nillable="true" type="q11:LOGIN" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserLoginCheck">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserLoginCheckResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="UserLoginCheckResult" nillable="true" type="q12:LOGIN" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSourceWalletAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSourceWalletAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="CheckSourceWalletAccountResult" nillable="true" type="q13:COLLECTION" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TranIdGenerator">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TranIdGeneratorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TranIdGeneratorResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="objTxn" nillable="true" type="q14:COLLECTION" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateTransactionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTPIN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TxnId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RequestType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTPINResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetTPINResult" nillable="true" type="q15:COLLECTION" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTransactionStatusWTW">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TranRefNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ResponseStatus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TATranRefNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WalletBalance" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTransactionStatusWTWResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateTransactionStatusWTWResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTransactionStatusIMPS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TranRefNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ResponseStatus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TATranRefNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BeneficiaryAccountNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTransactionStatusIMPSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateTransactionStatusIMPSResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TxnId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetTransactionDetailsResult" nillable="true" type="q16:COLLECTION" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendTPIN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TPIN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendTPINResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOTP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOTPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetOTPResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewOrders">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WalletId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewOrdersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ViewOrdersResult" nillable="true" type="q17:COLLECTIONLIST" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateUserPasswordResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendSMS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendSMSResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MissedCallService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Operator" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Region" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MissedCallServiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MissedCallServiceResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNamefromWalletID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WalletId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNamefromWalletIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNamefromWalletIDResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertMerchantTable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MerchantWalletId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertMerchantTableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertMerchantTableResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWalletIdMerchantTable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WalletId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWalletIdMerchantTableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateWalletIdMerchantTableResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewMiniOrders">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WalletId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewMiniOrdersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ViewMiniOrdersResult" nillable="true" type="q18:COLLECTIONLIST" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FetchMobileNumber">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FetchMobileNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="FetchMobileNumberResult" nillable="true" type="q19:ArrayOfLOGIN" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWalletIDFromTABulk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WalletID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWalletIDFromTABulkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateWalletIDFromTABulkResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFlag">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFlagResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateFlagResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIMPSTransactionStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TranRefNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ResponseStatus" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIMPSTransactionStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateIMPSTransactionStatusResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMobileFromTranRefNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TxnId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMobileFromTranRefNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetMobileFromTranRefNoResult" nillable="true" type="q20:COLLECTION" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadMoneyToWallet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WalletID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Balance" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadMoneyToWalletResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LoadMoneyToWalletResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FetchMobileNumberToLoadWallet">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FetchMobileNumberToLoadWalletResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="FetchMobileNumberToLoadWalletResult" nillable="true" type="q21:ArrayOfLOGIN" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCreatedWalletAndFlag">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WalletId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCreatedWalletAndFlagResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateCreatedWalletAndFlagResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

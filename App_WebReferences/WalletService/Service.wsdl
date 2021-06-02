@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://172.16.3.57:9002/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://172.16.3.57:9002/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://172.16.3.57:9002/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_GetSessionTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessionTime" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSessionTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessionTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CheckRegistrationStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckRegistrationStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService_CheckRegistrationStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckRegistrationStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CheckEnrollmentStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckEnrollmentStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService_CheckEnrollmentStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckEnrollmentStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CheckUserEnrollmentStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserEnrollmentStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService_CheckUserEnrollmentStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserEnrollmentStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertNewEnrollment_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewEnrollment" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertNewEnrollment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewEnrollmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserLogin" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_LogoutUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutUser" />
+  </wsdl:message>
+  <wsdl:message name="IService_LogoutUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EnrollCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnrollCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IService_EnrollCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnrollCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertUserEnrollment_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserEnrollment" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertUserEnrollment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserEnrollmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ValidateOTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateOTP" />
+  </wsdl:message>
+  <wsdl:message name="IService_ValidateOTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateOTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateWalletId_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWalletId" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateWalletId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWalletIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ViewProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewProfile" />
+  </wsdl:message>
+  <wsdl:message name="IService_ViewProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProfile" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IService_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserLoginCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserLoginCheck" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserLoginCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserLoginCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CheckSourceWalletAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSourceWalletAccount" />
+  </wsdl:message>
+  <wsdl:message name="IService_CheckSourceWalletAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSourceWalletAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_TranIdGenerator_InputMessage">
+    <wsdl:part name="parameters" element="tns:TranIdGenerator" />
+  </wsdl:message>
+  <wsdl:message name="IService_TranIdGenerator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TranIdGeneratorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CreateTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IService_CreateTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTPIN_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTPIN" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTPIN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTPINResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateTransactionStatusWTW_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTransactionStatusWTW" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateTransactionStatusWTW_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTransactionStatusWTWResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateTransactionStatusIMPS_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTransactionStatusIMPS" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateTransactionStatusIMPS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTransactionStatusIMPSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTransactionDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionDetails" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTransactionDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SendTPIN_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendTPIN" />
+  </wsdl:message>
+  <wsdl:message name="IService_SendTPIN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendTPINResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetOTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOTP" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetOTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ViewOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewOrders" />
+  </wsdl:message>
+  <wsdl:message name="IService_ViewOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateUserPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateUserPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SendSMS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendSMS" />
+  </wsdl:message>
+  <wsdl:message name="IService_SendSMS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_MissedCallService_InputMessage">
+    <wsdl:part name="parameters" element="tns:MissedCallService" />
+  </wsdl:message>
+  <wsdl:message name="IService_MissedCallService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MissedCallServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNamefromWalletID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNamefromWalletID" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNamefromWalletID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNamefromWalletIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertMerchantTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMerchantTable" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertMerchantTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMerchantTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateWalletIdMerchantTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWalletIdMerchantTable" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateWalletIdMerchantTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWalletIdMerchantTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ViewMiniOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewMiniOrders" />
+  </wsdl:message>
+  <wsdl:message name="IService_ViewMiniOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewMiniOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FetchMobileNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:FetchMobileNumber" />
+  </wsdl:message>
+  <wsdl:message name="IService_FetchMobileNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FetchMobileNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateWalletIDFromTABulk_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWalletIDFromTABulk" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateWalletIDFromTABulk_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWalletIDFromTABulkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateFlag_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFlag" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateFlag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFlagResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateIMPSTransactionStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateIMPSTransactionStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateIMPSTransactionStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateIMPSTransactionStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMobileFromTranRefNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMobileFromTranRefNo" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMobileFromTranRefNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMobileFromTranRefNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_LoadMoneyToWallet_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadMoneyToWallet" />
+  </wsdl:message>
+  <wsdl:message name="IService_LoadMoneyToWallet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadMoneyToWalletResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FetchMobileNumberToLoadWallet_InputMessage">
+    <wsdl:part name="parameters" element="tns:FetchMobileNumberToLoadWallet" />
+  </wsdl:message>
+  <wsdl:message name="IService_FetchMobileNumberToLoadWallet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FetchMobileNumberToLoadWalletResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateCreatedWalletAndFlag_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCreatedWalletAndFlag" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateCreatedWalletAndFlag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCreatedWalletAndFlagResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="GetSessionTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSessionTime" message="tns:IService_GetSessionTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSessionTimeResponse" message="tns:IService_GetSessionTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckRegistrationStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CheckRegistrationStatus" message="tns:IService_CheckRegistrationStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CheckRegistrationStatusResponse" message="tns:IService_CheckRegistrationStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckEnrollmentStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CheckEnrollmentStatus" message="tns:IService_CheckEnrollmentStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CheckEnrollmentStatusResponse" message="tns:IService_CheckEnrollmentStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserEnrollmentStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CheckUserEnrollmentStatus" message="tns:IService_CheckUserEnrollmentStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CheckUserEnrollmentStatusResponse" message="tns:IService_CheckUserEnrollmentStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewEnrollment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertNewEnrollment" message="tns:IService_InsertNewEnrollment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertNewEnrollmentResponse" message="tns:IService_InsertNewEnrollment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UserLogin" message="tns:IService_UserLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UserLoginResponse" message="tns:IService_UserLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogoutUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/LogoutUser" message="tns:IService_LogoutUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/LogoutUserResponse" message="tns:IService_LogoutUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnrollCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EnrollCustomer" message="tns:IService_EnrollCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EnrollCustomerResponse" message="tns:IService_EnrollCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserEnrollment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertUserEnrollment" message="tns:IService_InsertUserEnrollment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertUserEnrollmentResponse" message="tns:IService_InsertUserEnrollment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateOTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ValidateOTP" message="tns:IService_ValidateOTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ValidateOTPResponse" message="tns:IService_ValidateOTP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWalletId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateWalletId" message="tns:IService_UpdateWalletId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateWalletIdResponse" message="tns:IService_UpdateWalletId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ViewProfile" message="tns:IService_ViewProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ViewProfileResponse" message="tns:IService_ViewProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateProfile" message="tns:IService_UpdateProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateProfileResponse" message="tns:IService_UpdateProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ChangePassword" message="tns:IService_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ChangePasswordResponse" message="tns:IService_ChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLoginCheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UserLoginCheck" message="tns:IService_UserLoginCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UserLoginCheckResponse" message="tns:IService_UserLoginCheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSourceWalletAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CheckSourceWalletAccount" message="tns:IService_CheckSourceWalletAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CheckSourceWalletAccountResponse" message="tns:IService_CheckSourceWalletAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TranIdGenerator">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/TranIdGenerator" message="tns:IService_TranIdGenerator_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/TranIdGeneratorResponse" message="tns:IService_TranIdGenerator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CreateTransaction" message="tns:IService_CreateTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CreateTransactionResponse" message="tns:IService_CreateTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTPIN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTPIN" message="tns:IService_GetTPIN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTPINResponse" message="tns:IService_GetTPIN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransactionStatusWTW">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateTransactionStatusWTW" message="tns:IService_UpdateTransactionStatusWTW_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateTransactionStatusWTWResponse" message="tns:IService_UpdateTransactionStatusWTW_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransactionStatusIMPS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateTransactionStatusIMPS" message="tns:IService_UpdateTransactionStatusIMPS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateTransactionStatusIMPSResponse" message="tns:IService_UpdateTransactionStatusIMPS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTransactionDetails" message="tns:IService_GetTransactionDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTransactionDetailsResponse" message="tns:IService_GetTransactionDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendTPIN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SendTPIN" message="tns:IService_SendTPIN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SendTPINResponse" message="tns:IService_SendTPIN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetOTP" message="tns:IService_GetOTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetOTPResponse" message="tns:IService_GetOTP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ViewOrders" message="tns:IService_ViewOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ViewOrdersResponse" message="tns:IService_ViewOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateUserPassword" message="tns:IService_UpdateUserPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateUserPasswordResponse" message="tns:IService_UpdateUserPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SendSMS" message="tns:IService_SendSMS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SendSMSResponse" message="tns:IService_SendSMS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MissedCallService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/MissedCallService" message="tns:IService_MissedCallService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/MissedCallServiceResponse" message="tns:IService_MissedCallService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNamefromWalletID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetNamefromWalletID" message="tns:IService_GetNamefromWalletID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetNamefromWalletIDResponse" message="tns:IService_GetNamefromWalletID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMerchantTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertMerchantTable" message="tns:IService_InsertMerchantTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertMerchantTableResponse" message="tns:IService_InsertMerchantTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWalletIdMerchantTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateWalletIdMerchantTable" message="tns:IService_UpdateWalletIdMerchantTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateWalletIdMerchantTableResponse" message="tns:IService_UpdateWalletIdMerchantTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewMiniOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ViewMiniOrders" message="tns:IService_ViewMiniOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ViewMiniOrdersResponse" message="tns:IService_ViewMiniOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchMobileNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FetchMobileNumber" message="tns:IService_FetchMobileNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FetchMobileNumberResponse" message="tns:IService_FetchMobileNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWalletIDFromTABulk">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateWalletIDFromTABulk" message="tns:IService_UpdateWalletIDFromTABulk_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateWalletIDFromTABulkResponse" message="tns:IService_UpdateWalletIDFromTABulk_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFlag">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateFlag" message="tns:IService_UpdateFlag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateFlagResponse" message="tns:IService_UpdateFlag_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIMPSTransactionStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateIMPSTransactionStatus" message="tns:IService_UpdateIMPSTransactionStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateIMPSTransactionStatusResponse" message="tns:IService_UpdateIMPSTransactionStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileFromTranRefNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetMobileFromTranRefNo" message="tns:IService_GetMobileFromTranRefNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetMobileFromTranRefNoResponse" message="tns:IService_GetMobileFromTranRefNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadMoneyToWallet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/LoadMoneyToWallet" message="tns:IService_LoadMoneyToWallet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/LoadMoneyToWalletResponse" message="tns:IService_LoadMoneyToWallet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchMobileNumberToLoadWallet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FetchMobileNumberToLoadWallet" message="tns:IService_FetchMobileNumberToLoadWallet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FetchMobileNumberToLoadWalletResponse" message="tns:IService_FetchMobileNumberToLoadWallet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCreatedWalletAndFlag">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateCreatedWalletAndFlag" message="tns:IService_UpdateCreatedWalletAndFlag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateCreatedWalletAndFlagResponse" message="tns:IService_UpdateCreatedWalletAndFlag_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSessionTime">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSessionTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckRegistrationStatus">
+      <soap:operation soapAction="http://tempuri.org/IService/CheckRegistrationStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckEnrollmentStatus">
+      <soap:operation soapAction="http://tempuri.org/IService/CheckEnrollmentStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserEnrollmentStatus">
+      <soap:operation soapAction="http://tempuri.org/IService/CheckUserEnrollmentStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewEnrollment">
+      <soap:operation soapAction="http://tempuri.org/IService/InsertNewEnrollment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <soap:operation soapAction="http://tempuri.org/IService/UserLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogoutUser">
+      <soap:operation soapAction="http://tempuri.org/IService/LogoutUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnrollCustomer">
+      <soap:operation soapAction="http://tempuri.org/IService/EnrollCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserEnrollment">
+      <soap:operation soapAction="http://tempuri.org/IService/InsertUserEnrollment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateOTP">
+      <soap:operation soapAction="http://tempuri.org/IService/ValidateOTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWalletId">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateWalletId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewProfile">
+      <soap:operation soapAction="http://tempuri.org/IService/ViewProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/IService/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLoginCheck">
+      <soap:operation soapAction="http://tempuri.org/IService/UserLoginCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSourceWalletAccount">
+      <soap:operation soapAction="http://tempuri.org/IService/CheckSourceWalletAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TranIdGenerator">
+      <soap:operation soapAction="http://tempuri.org/IService/TranIdGenerator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTransaction">
+      <soap:operation soapAction="http://tempuri.org/IService/CreateTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTPIN">
+      <soap:operation soapAction="http://tempuri.org/IService/GetTPIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransactionStatusWTW">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateTransactionStatusWTW" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransactionStatusIMPS">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateTransactionStatusIMPS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <soap:operation soapAction="http://tempuri.org/IService/GetTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTPIN">
+      <soap:operation soapAction="http://tempuri.org/IService/SendTPIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOTP">
+      <soap:operation soapAction="http://tempuri.org/IService/GetOTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewOrders">
+      <soap:operation soapAction="http://tempuri.org/IService/ViewOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserPassword">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateUserPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <soap:operation soapAction="http://tempuri.org/IService/SendSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MissedCallService">
+      <soap:operation soapAction="http://tempuri.org/IService/MissedCallService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNamefromWalletID">
+      <soap:operation soapAction="http://tempuri.org/IService/GetNamefromWalletID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMerchantTable">
+      <soap:operation soapAction="http://tempuri.org/IService/InsertMerchantTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWalletIdMerchantTable">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateWalletIdMerchantTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewMiniOrders">
+      <soap:operation soapAction="http://tempuri.org/IService/ViewMiniOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchMobileNumber">
+      <soap:operation soapAction="http://tempuri.org/IService/FetchMobileNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWalletIDFromTABulk">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateWalletIDFromTABulk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFlag">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIMPSTransactionStatus">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateIMPSTransactionStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileFromTranRefNo">
+      <soap:operation soapAction="http://tempuri.org/IService/GetMobileFromTranRefNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadMoneyToWallet">
+      <soap:operation soapAction="http://tempuri.org/IService/LoadMoneyToWallet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchMobileNumberToLoadWallet">
+      <soap:operation soapAction="http://tempuri.org/IService/FetchMobileNumberToLoadWallet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCreatedWalletAndFlag">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateCreatedWalletAndFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://172.16.3.57:9002/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
